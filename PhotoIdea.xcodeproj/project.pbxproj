@@ -7,23 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B10E89581731C1920034194F /* PIIdea.m in Sources */ = {isa = PBXBuildFile; fileRef = B10E89571731C1920034194F /* PIIdea.m */; };
+		B10E895E1731C1BE0034194F /* PICreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B10E895B1731C1BE0034194F /* PICreationViewController.m */; };
+		B10E895F1731C1BE0034194F /* PIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B10E895D1731C1BE0034194F /* PIViewController.m */; };
+		B10E89621731C1DF0034194F /* PIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B10E89611731C1DF0034194F /* PIAppDelegate.m */; };
+		B140B88C17476CBD000C1102 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B140B88A17476CBD000C1102 /* Model.xcdatamodeld */; };
 		B1CA2B43173179560010236C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1CA2B42173179560010236C /* UIKit.framework */; };
 		B1CA2B45173179560010236C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1CA2B44173179560010236C /* Foundation.framework */; };
 		B1CA2B47173179560010236C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1CA2B46173179560010236C /* CoreGraphics.framework */; };
 		B1CA2B4D173179560010236C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1CA2B4B173179560010236C /* InfoPlist.strings */; };
 		B1CA2B4F173179560010236C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1CA2B4E173179560010236C /* main.m */; };
-		B1CA2B53173179560010236C /* PIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1CA2B52173179560010236C /* PIAppDelegate.m */; };
 		B1CA2B55173179560010236C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B1CA2B54173179560010236C /* Default.png */; };
 		B1CA2B57173179560010236C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1CA2B56173179560010236C /* Default@2x.png */; };
 		B1CA2B59173179560010236C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1CA2B58173179560010236C /* Default-568h@2x.png */; };
 		B1CA2B5C173179560010236C /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1CA2B5A173179560010236C /* MainStoryboard_iPhone.storyboard */; };
 		B1CA2B5F173179560010236C /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1CA2B5D173179560010236C /* MainStoryboard_iPad.storyboard */; };
-		B1CA2B62173179560010236C /* PIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1CA2B61173179560010236C /* PIViewController.m */; };
 		B1CA2B6A173179570010236C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1CA2B69173179570010236C /* SenTestingKit.framework */; };
 		B1CA2B6B173179570010236C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1CA2B42173179560010236C /* UIKit.framework */; };
 		B1CA2B6C173179570010236C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1CA2B44173179560010236C /* Foundation.framework */; };
 		B1CA2B74173179570010236C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1CA2B72173179570010236C /* InfoPlist.strings */; };
-		B1CA2B77173179570010236C /* PhotoIdeaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B1CA2B76173179570010236C /* PhotoIdeaTests.m */; };
+		B1CA2B88173185FA0010236C /* PIIdeaFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B1CA2B87173185FA0010236C /* PIIdeaFactoryTests.m */; };
+		B1CA2B9217318D570010236C /* PIIdeaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B1CA2B9117318D570010236C /* PIIdeaManager.m */; };
+		B1CA2B9517318D830010236C /* PIIdeaManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B1CA2B9417318D830010236C /* PIIdeaManagerTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +42,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B10E89561731C1920034194F /* PIIdea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PIIdea.h; path = Classes/Business/PIIdea.h; sourceTree = "<group>"; };
+		B10E89571731C1920034194F /* PIIdea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PIIdea.m; path = Classes/Business/PIIdea.m; sourceTree = "<group>"; };
+		B10E895A1731C1BE0034194F /* PICreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PICreationViewController.h; sourceTree = "<group>"; };
+		B10E895B1731C1BE0034194F /* PICreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PICreationViewController.m; sourceTree = "<group>"; };
+		B10E895C1731C1BE0034194F /* PIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIViewController.h; sourceTree = "<group>"; };
+		B10E895D1731C1BE0034194F /* PIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIViewController.m; sourceTree = "<group>"; };
+		B10E89601731C1DF0034194F /* PIAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIAppDelegate.h; sourceTree = "<group>"; };
+		B10E89611731C1DF0034194F /* PIAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIAppDelegate.m; sourceTree = "<group>"; };
+		B140B88B17476CBD000C1102 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		B1CA2B3F173179560010236C /* PhotoIdea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoIdea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1CA2B42173179560010236C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B1CA2B44173179560010236C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -45,21 +59,21 @@
 		B1CA2B4C173179560010236C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B1CA2B4E173179560010236C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B1CA2B50173179560010236C /* PhotoIdea-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhotoIdea-Prefix.pch"; sourceTree = "<group>"; };
-		B1CA2B51173179560010236C /* PIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PIAppDelegate.h; sourceTree = "<group>"; };
-		B1CA2B52173179560010236C /* PIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PIAppDelegate.m; sourceTree = "<group>"; };
 		B1CA2B54173179560010236C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B1CA2B56173179560010236C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B1CA2B58173179560010236C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B1CA2B5B173179560010236C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		B1CA2B5E173179560010236C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		B1CA2B60173179560010236C /* PIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PIViewController.h; sourceTree = "<group>"; };
-		B1CA2B61173179560010236C /* PIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PIViewController.m; sourceTree = "<group>"; };
 		B1CA2B68173179570010236C /* PhotoIdeaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoIdeaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1CA2B69173179570010236C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		B1CA2B71173179570010236C /* PhotoIdeaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhotoIdeaTests-Info.plist"; sourceTree = "<group>"; };
 		B1CA2B73173179570010236C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B1CA2B75173179570010236C /* PhotoIdeaTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoIdeaTests.h; sourceTree = "<group>"; };
-		B1CA2B76173179570010236C /* PhotoIdeaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoIdeaTests.m; sourceTree = "<group>"; };
+		B1CA2B86173185FA0010236C /* PIIdeaFactoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIIdeaFactoryTests.h; sourceTree = "<group>"; };
+		B1CA2B87173185FA0010236C /* PIIdeaFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIIdeaFactoryTests.m; sourceTree = "<group>"; };
+		B1CA2B9017318D570010236C /* PIIdeaManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PIIdeaManager.h; path = Logic/PIIdeaManager.h; sourceTree = "<group>"; };
+		B1CA2B9117318D570010236C /* PIIdeaManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PIIdeaManager.m; path = Logic/PIIdeaManager.m; sourceTree = "<group>"; };
+		B1CA2B9317318D830010236C /* PIIdeaManagerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PIIdeaManagerTests.h; path = Logic/PIIdeaManagerTests.h; sourceTree = "<group>"; };
+		B1CA2B9417318D830010236C /* PIIdeaManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PIIdeaManagerTests.m; path = Logic/PIIdeaManagerTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +100,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B10E89591731C1BE0034194F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B10E895A1731C1BE0034194F /* PICreationViewController.h */,
+				B10E895B1731C1BE0034194F /* PICreationViewController.m */,
+				B10E895C1731C1BE0034194F /* PIViewController.h */,
+				B10E895D1731C1BE0034194F /* PIViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		B1CA2B36173179560010236C = {
 			isa = PBXGroup;
 			children = (
@@ -119,12 +144,9 @@
 		B1CA2B48173179560010236C /* PhotoIdea */ = {
 			isa = PBXGroup;
 			children = (
-				B1CA2B51173179560010236C /* PIAppDelegate.h */,
-				B1CA2B52173179560010236C /* PIAppDelegate.m */,
-				B1CA2B5A173179560010236C /* MainStoryboard_iPhone.storyboard */,
-				B1CA2B5D173179560010236C /* MainStoryboard_iPad.storyboard */,
-				B1CA2B60173179560010236C /* PIViewController.h */,
-				B1CA2B61173179560010236C /* PIViewController.m */,
+				B140B88A17476CBD000C1102 /* Model.xcdatamodeld */,
+				B1CA2B8E17318D050010236C /* Classes */,
+				B1CA2B8D17318CCD0010236C /* Storyboards */,
 				B1CA2B49173179560010236C /* Supporting Files */,
 			);
 			path = PhotoIdea;
@@ -147,9 +169,11 @@
 		B1CA2B6F173179570010236C /* PhotoIdeaTests */ = {
 			isa = PBXGroup;
 			children = (
-				B1CA2B75173179570010236C /* PhotoIdeaTests.h */,
-				B1CA2B76173179570010236C /* PhotoIdeaTests.m */,
 				B1CA2B70173179570010236C /* Supporting Files */,
+				B1CA2B86173185FA0010236C /* PIIdeaFactoryTests.h */,
+				B1CA2B87173185FA0010236C /* PIIdeaFactoryTests.m */,
+				B1CA2B9317318D830010236C /* PIIdeaManagerTests.h */,
+				B1CA2B9417318D830010236C /* PIIdeaManagerTests.m */,
 			);
 			path = PhotoIdeaTests;
 			sourceTree = "<group>";
@@ -161,6 +185,46 @@
 				B1CA2B72173179570010236C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B1CA2B83173181640010236C /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				B10E89561731C1920034194F /* PIIdea.h */,
+				B10E89571731C1920034194F /* PIIdea.m */,
+			);
+			name = Business;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B1CA2B8D17318CCD0010236C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B1CA2B5D173179560010236C /* MainStoryboard_iPad.storyboard */,
+				B1CA2B5A173179560010236C /* MainStoryboard_iPhone.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		B1CA2B8E17318D050010236C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B10E89601731C1DF0034194F /* PIAppDelegate.h */,
+				B10E89611731C1DF0034194F /* PIAppDelegate.m */,
+				B10E89591731C1BE0034194F /* ViewControllers */,
+				B1CA2B8F17318D2D0010236C /* Logic */,
+				B1CA2B83173181640010236C /* Business */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		B1CA2B8F17318D2D0010236C /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				B1CA2B9017318D570010236C /* PIIdeaManager.h */,
+				B1CA2B9117318D570010236C /* PIIdeaManager.m */,
+			);
+			name = Logic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,8 +340,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1CA2B4F173179560010236C /* main.m in Sources */,
-				B1CA2B53173179560010236C /* PIAppDelegate.m in Sources */,
-				B1CA2B62173179560010236C /* PIViewController.m in Sources */,
+				B1CA2B9217318D570010236C /* PIIdeaManager.m in Sources */,
+				B10E89581731C1920034194F /* PIIdea.m in Sources */,
+				B10E895E1731C1BE0034194F /* PICreationViewController.m in Sources */,
+				B10E895F1731C1BE0034194F /* PIViewController.m in Sources */,
+				B10E89621731C1DF0034194F /* PIAppDelegate.m in Sources */,
+				B140B88C17476CBD000C1102 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +353,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1CA2B77173179570010236C /* PhotoIdeaTests.m in Sources */,
+				B1CA2B88173185FA0010236C /* PIIdeaFactoryTests.m in Sources */,
+				B1CA2B9517318D830010236C /* PIIdeaManagerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +537,7 @@
 				B1CA2B7C173179570010236C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B1CA2B7D173179570010236C /* Build configuration list for PBXNativeTarget "PhotoIdeaTests" */ = {
 			isa = XCConfigurationList;
@@ -476,8 +546,22 @@
 				B1CA2B7F173179570010236C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B140B88A17476CBD000C1102 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B140B88B17476CBD000C1102 /* Model.xcdatamodel */,
+			);
+			currentVersion = B140B88B17476CBD000C1102 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B1CA2B37173179560010236C /* Project object */;
 }
