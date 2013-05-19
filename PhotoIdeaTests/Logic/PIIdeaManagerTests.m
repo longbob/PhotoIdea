@@ -8,7 +8,7 @@
 
 #import "PIIdeaManagerTests.h"
 #import "PIIdeaManager.h"
-#import "PIIdea.h"
+#import "PIIdeaViewObject.h"
 @implementation PIIdeaManagerTests
 
 - (void)setUp

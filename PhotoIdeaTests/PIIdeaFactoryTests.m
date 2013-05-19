@@ -7,14 +7,14 @@
 //
 
 #import "PIIdeaFactoryTests.h"
-#import "PIIdea.h"
+#import "PIIdeaViewObject.h"
 
 @implementation PIIdeaFactoryTests
 
 - (void) testIdeaWithName
 {
     NSString *name = @"Name of the idea";
-    PIIdea *idea = [PIIdea ideaWithName:name];
+    PIIdeaViewObject *idea = [PIIdeaViewObject ideaWithName:name];
 
     STAssertNotNil(idea,
                    @"idea should not be nil");

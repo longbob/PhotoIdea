@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PIViewController : UIViewController
+@interface PIViewController : UITableViewController
 
 @end

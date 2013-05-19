@@ -8,7 +8,7 @@
 
 #import "PICreationViewController.h"
 #import "PIIdeaManager.h"
-#import "PIIdea.h"
+#import "PIIdeaViewObject.h"
 
 @interface PICreationViewController ()
 
@@ -16,6 +16,7 @@
 - (IBAction)cancel:(UIBarButtonItem *)sender;
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *done;
 
 @end
 
@@ -45,13 +46,12 @@
 
 - (void)done:(UIBarButtonItem *)sender
 {
-    [[PIIdeaManager sharedInstance] addIdea:[PIIdea ideaWithName:self.titleTextField.text]];
-    
-    [self dismissViewControllerAnimated:YES completion:Nil];
+    [[PIIdeaManager sharedInstance] addIdea:[PIIdeaViewObject ideaWithName:self.titleTextField.text]];
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (IBAction)cancel:(UIBarButtonItem *)sender {
-    [self dismissViewControllerAnimated:YES completion:Nil];
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end

@@ -7,17 +7,25 @@
 //
 
 #import "PIIdeaManager.h"
+#import <CoreData/CoreData.h>
+#import "PIIdea+CoreData.h"
+#import "PIIdeaViewObject.h"
+
+#define DocumentNameURL @"MyIdeas.pi"
 
 @interface PIIdeaManager ()
 
-@property (nonatomic, strong) NSMutableArray *ideas;
+- (void)performWithDocument:(OnDocumentReady)onDocumentReady;
+
+- (void)objectsDidChange:(NSNotification *)notification;
+- (void)contextDidSave:(NSNotification *)notification;
 
 @end
 
 
 @implementation PIIdeaManager
 
-#pragma mark - singleton
+#pragma mark - Singleton
 
 + (PIIdeaManager *)sharedInstance
 {
@@ -30,11 +38,81 @@
     return shared;
 }
 
-#pragma mark - idea management
+#pragma mark - Initialization
 
-- (void)addIdea:(PIIdea *)idea
+- (id)init
 {
-    [self.ideas addObject:idea];
+    if (self = [super init]) {
+        
+        NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory
+                                                             inDomains:NSUserDomainMask] lastObject];
+        url = [url URLByAppendingPathComponent:DocumentNameURL];
+        
+        self.document = [[UIManagedDocument alloc] initWithFileURL:url];
+        
+        // Set our document up for automatic migrations
+        NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
+                                 [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
+                                 [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
+        self.document.persistentStoreOptions = options;
+        
+        // Register for notifications
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(objectsDidChange:)
+                                                     name:NSManagedObjectContextObjectsDidChangeNotification
+                                                   object:self.document.managedObjectContext];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(contextDidSave:)
+                                                     name:NSManagedObjectContextDidSaveNotification
+                                                   object:self.document.managedObjectContext];
+    }
+    return self;
 }
+
+#pragma mark - Document
+
+- (void)performWithDocument:(OnDocumentReady)onDocumentReady
+{
+    void (^OnDocumentDidLoad)(BOOL) = ^(BOOL success) {
+        onDocumentReady(self.document);
+    };
+    
+    if (![[NSFileManager defaultManager]fileExistsAtPath:[self.document.fileURL path]]) {
+        [self.document saveToURL:self.document.fileURL
+                forSaveOperation:UIDocumentSaveForCreating
+               completionHandler:OnDocumentDidLoad];
+    } else if (self.document.documentState == UIDocumentStateClosed) {
+        [self.document openWithCompletionHandler:OnDocumentDidLoad];
+    } else if (self.document.documentState == UIDocumentStateNormal) {
+        OnDocumentDidLoad(YES);
+    }
+}
+
+#pragma mark - Idea Management
+
+- (void)addIdea:(PIIdeaViewObject *)idea
+{
+    [self performWithDocument:^(UIManagedDocument *document) {
+        [PIIdea ideaWithName:idea.name inManagedObjectContext:document.managedObjectContext];
+    }];
+}
+
+#pragma mark - Notifications
+
+- (void)objectsDidChange:(NSNotification *)notification
+{
+#ifdef DEBUG
+    NSLog(@"NSManagedObjects did change.");
+#endif
+}
+
+- (void)contextDidSave:(NSNotification *)notification
+{
+#ifdef DEBUG
+    NSLog(@"NSManagedContext did save.");
+#endif
+}
+
 
 @end

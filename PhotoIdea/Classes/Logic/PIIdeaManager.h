@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@class PIIdea;
+@class PIIdeaViewObject;
+
+typedef void(^OnDocumentReady)(UIManagedDocument *document);
 
 @interface PIIdeaManager : NSObject
 
 + (PIIdeaManager *)sharedInstance;
 
-- (void) addIdea:(PIIdea *)idea;
+- (void)addIdea:(PIIdeaViewObject *)idea;
 
+@property (nonatomic, strong) UIManagedDocument *document;
+@property (nonatomic, strong, readonly) NSArray *ideas;
 @end

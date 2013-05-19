@@ -10,6 +10,8 @@
 
 @interface PIViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *addIdea;
+
 @end
 
 @implementation PIViewController
@@ -24,6 +26,9 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)buttonSwiped:(id)sender {
+    self.addIdea.hidden = true;
 }
 
 @end
