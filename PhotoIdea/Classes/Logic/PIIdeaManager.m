@@ -11,11 +11,9 @@
 #import "PIIdea+CoreData.h"
 #import "PIIdeaViewObject.h"
 
-#define DocumentNameURL @"MyIdeas.pi"
+#define kDocumentNameURL @"MyIdeas.pi"
 
 @interface PIIdeaManager ()
-
-- (void)performWithDocument:(OnDocumentReady)onDocumentReady;
 
 - (void)objectsDidChange:(NSNotification *)notification;
 - (void)contextDidSave:(NSNotification *)notification;
@@ -46,7 +44,7 @@
         
         NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory
                                                              inDomains:NSUserDomainMask] lastObject];
-        url = [url URLByAppendingPathComponent:DocumentNameURL];
+        url = [url URLByAppendingPathComponent:kDocumentNameURL];
         
         self.document = [[UIManagedDocument alloc] initWithFileURL:url];
         
@@ -91,10 +89,10 @@
 
 #pragma mark - Idea Management
 
-- (void)addIdea:(PIIdeaViewObject *)idea
+- (void)addIdea:(PIIdeaViewObject *)ideaVO
 {
     [self performWithDocument:^(UIManagedDocument *document) {
-        [PIIdea ideaWithName:idea.name inManagedObjectContext:document.managedObjectContext];
+        [PIIdea ideaWithName:ideaVO.name inManagedObjectContext:document.managedObjectContext];
     }];
 }
 

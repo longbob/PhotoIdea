@@ -9,6 +9,7 @@
 #import "PIIdea.h"
 
 #define kIdeaEntityName @"PIIdea"
+#define kTitleKey @"title"
 
 @interface PIIdea (CoreData)
 

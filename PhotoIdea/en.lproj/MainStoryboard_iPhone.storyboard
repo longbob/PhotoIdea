@@ -92,6 +92,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="addIdeaTouchDragOutside:" destination="DTh-Fg-zg8" eventType="touchDragOutside" id="wpZ-0M-Ntm"/>
                                     <segue destination="sNS-GI-ImJ" kind="modal" id="gHJ-vO-VwN"/>
                                 </connections>
                             </button>
@@ -148,6 +149,7 @@
         <class className="PIHomeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PIHomeViewController.h"/>
             <relationships>
+                <relationship kind="action" name="addIdeaTouchDragOutside:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="addIdea" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>

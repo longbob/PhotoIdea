@@ -12,6 +12,8 @@
 
 @interface PIIdea : NSManagedObject
 
+
+
 @property (nonatomic, retain) NSString * title;
 
 @end

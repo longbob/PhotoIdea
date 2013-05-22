@@ -16,6 +16,8 @@ typedef void(^OnDocumentReady)(UIManagedDocument *document);
 
 + (PIIdeaManager *)sharedInstance;
 
+- (void)performWithDocument:(OnDocumentReady)onDocumentReady;
+
 - (void)addIdea:(PIIdeaViewObject *)idea;
 
 @property (nonatomic, strong) UIManagedDocument *document;

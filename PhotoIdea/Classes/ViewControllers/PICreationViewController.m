@@ -48,6 +48,7 @@
 {
     [[PIIdeaManager sharedInstance] addIdea:[PIIdeaViewObject ideaWithName:self.titleTextField.text]];
     [self dismissViewControllerAnimated:YES completion:NULL];
+    
 }
 
 - (IBAction)cancel:(UIBarButtonItem *)sender {
