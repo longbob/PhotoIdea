@@ -11,7 +11,6 @@
 #import "PIIdea+CoreData.h"
 
 #define kIdeaCacheName @"ideaCache"
-#define kCellIdentifier @"cellIdentifier"
 
 @interface PIHomeViewController ()
 
@@ -48,6 +47,9 @@
         NSError *error = nil;
         if (![self.fetchedResultsController performFetch:&error] && error) {
             NSLog(@"Couldn't perform fetch. Error: %@",error);
+        } else {
+            self.tableView.hidden = false;
+            [self.tableView reloadData];
         }
         
         
@@ -97,11 +99,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = nil;
-    cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
+    static NSString *cellIdentifier = @"cellIdentifier";
+    cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc]
-                 initWithStyle:UITableViewCellStyleSubtitle
-                 reuseIdentifier:kCellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                      reuseIdentifier:cellIdentifier];
         [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     }
     [self configureCell:cell atIndexPath:indexPath];
