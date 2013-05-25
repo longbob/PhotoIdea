@@ -7,7 +7,7 @@
 //
 
 #import "PIAppDelegate.h"
-
+#import "PIIdeaManager.h"
 @implementation PIAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

@@ -15,9 +15,10 @@
 @interface PIHomeViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIButton *addIdea;
 
-@property (nonatomic, weak) UIManagedDocument *managedDocument;
+- (IBAction)doneAddingIdea:(UIStoryboardSegue *)segue;
+
+@property (nonatomic, weak) UIManagedDocument *document;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end
@@ -25,14 +26,13 @@
 
 @implementation PIHomeViewController
 
-#pragma mark - UIViewController lifecycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     [[PIIdeaManager sharedInstance] performWithDocument:^(UIManagedDocument *document) {
-        self.managedDocument = document;
         
+        self.document = document;
         NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:kIdeaEntityName];
         request.sortDescriptors = [NSArray arrayWithObject:
                                    [NSSortDescriptor sortDescriptorWithKey:kTitleKey
@@ -44,6 +44,7 @@
                                                                               sectionNameKeyPath:nil
                                                                                        cacheName:kIdeaCacheName];
         self.fetchedResultsController.delegate = self;
+        
         NSError *error = nil;
         if (![self.fetchedResultsController performFetch:&error] && error) {
             NSLog(@"Couldn't perform fetch. Error: %@",error);
@@ -51,39 +52,31 @@
             self.tableView.hidden = false;
             [self.tableView reloadData];
         }
-        
-        
     }];
-}
-
-- (void)viewDidUnload
-{
-    self.fetchedResultsController = nil;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.document.managedObjectContext save:nil];
+    self.fetchedResultsController = nil;
 }
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return [[self.fetchedResultsController sections]count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
-    return [sectionInfo numberOfObjects];
+    return [[[self.fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
-    return [sectionInfo name];
+    return [[[self.fetchedResultsController sections] objectAtIndex:section] name];
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
@@ -109,6 +102,7 @@
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
+#pragma mark UITableViewDatasource helper methods
 
 - (void) configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
@@ -135,6 +129,10 @@
     [self.tableView beginUpdates];
 }
 
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.tableView endUpdates];
+}
 
 - (void)controller:(NSFetchedResultsController *)controller
   didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
@@ -192,10 +190,11 @@
     }
 }
 
+#pragma mark - UIStoryboardSegue
 
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+- (void)doneAddingIdea:(UIStoryboardSegue *)segue
 {
-    [self.tableView endUpdates];
+    NSLog(@"Done adding idea");
 }
 
 @end

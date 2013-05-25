@@ -11,15 +11,15 @@
 @class PIIdeaViewObject;
 
 typedef void(^OnDocumentReady)(UIManagedDocument *document);
+typedef void(^OnDocumentClosed)();
 
 @interface PIIdeaManager : NSObject
 
 + (PIIdeaManager *)sharedInstance;
 
 - (void)performWithDocument:(OnDocumentReady)onDocumentReady;
+- (void)closeDocument:(OnDocumentClosed)onDocumentClosed;
 
 - (void)addIdea:(PIIdeaViewObject *)idea;
 
-@property (nonatomic, strong) UIManagedDocument *document;
-@property (nonatomic, strong, readonly) NSArray *ideas;
 @end

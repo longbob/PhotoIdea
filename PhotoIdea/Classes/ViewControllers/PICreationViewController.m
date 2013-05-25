@@ -12,24 +12,14 @@
 
 @interface PICreationViewController ()
 
-- (IBAction)done:(UIBarButtonItem *)sender;
 - (IBAction)cancel:(UIBarButtonItem *)sender;
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *done;
 
 @end
 
 @implementation PICreationViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -44,15 +34,17 @@
 
 #pragma mark - actions
 
-- (void)done:(UIBarButtonItem *)sender
-{
-    [[PIIdeaManager sharedInstance] addIdea:[PIIdeaViewObject ideaWithName:self.titleTextField.text]];
-    [self dismissViewControllerAnimated:YES completion:NULL];
-    
-}
-
 - (IBAction)cancel:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"doneAddingIdea"]) {
+        [[PIIdeaManager sharedInstance] addIdea:[PIIdeaViewObject ideaWithName:self.titleTextField.text]];
+    }
 }
 
 @end

@@ -18,6 +18,8 @@
 - (void)objectsDidChange:(NSNotification *)notification;
 - (void)contextDidSave:(NSNotification *)notification;
 
+@property (nonatomic, strong) UIManagedDocument *document;
+
 @end
 
 
@@ -87,7 +89,16 @@
     }
 }
 
-#pragma mark - Idea Management
+- (void)closeDocument:(OnDocumentClosed)onDocumentClosed
+{
+    [self.document closeWithCompletionHandler:^(BOOL success) {
+        if (success) {
+            onDocumentClosed();
+        }
+    }];
+}
+
+#pragma mark - PIIdea Management
 
 - (void)addIdea:(PIIdeaViewObject *)ideaVO
 {
@@ -96,7 +107,7 @@
     }];
 }
 
-#pragma mark - Notifications
+#pragma mark - NSNotification
 
 - (void)objectsDidChange:(NSNotification *)notification
 {

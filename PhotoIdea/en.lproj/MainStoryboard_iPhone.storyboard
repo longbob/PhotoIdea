@@ -51,18 +51,18 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="RPE-7l-vB2">
                             <connections>
-                                <action selector="done:" destination="Vu9-aZ-cxK" id="kwP-bw-M0H"/>
+                                <segue destination="IJ7-f6-v5R" kind="unwind" identifier="doneAddingIdea" unwindAction="doneAddingIdea:" id="OXL-Fg-jkr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="done" destination="RPE-7l-vB2" id="gVB-8k-3sc"/>
                         <outlet property="titleTextField" destination="DPm-4c-XW3" id="Tik-e4-DGO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A05-1F-9SK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="IJ7-f6-v5R" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="981" y="135"/>
+            <point key="canvasLocation" x="977" y="142"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="7DS-zG-ZSn">
@@ -109,7 +109,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addIdea" destination="Olx-zC-YDl" id="lvD-7V-Szf"/>
                         <outlet property="tableView" destination="xSI-x2-ctG" id="dP0-tW-1NP"/>
                     </connections>
                 </viewController>
@@ -130,30 +129,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4QN-De-MYj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="574" y="135"/>
+            <point key="canvasLocation" x="568" y="142"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PICreationViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PICreationViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="done:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="done" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="titleTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="PIHomeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PIHomeViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addIdea" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -11,7 +11,6 @@
 		B10E89621731C1DF0034194F /* PIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B10E89611731C1DF0034194F /* PIAppDelegate.m */; };
 		B140B88C17476CBD000C1102 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B140B88A17476CBD000C1102 /* Model.xcdatamodeld */; };
 		B158DEDB1748C68400B23B01 /* PIHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B158DEDA1748C68400B23B01 /* PIHomeViewController.m */; };
-		B18C43BE1748B3E200985D8B /* PIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B18C43BD1748B3E200985D8B /* PIViewController.m */; };
 		B19ABFD4174911BF0089F005 /* PIIdeaViewObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B19ABFD3174911BF0089F005 /* PIIdeaViewObject.m */; };
 		B1C386F71747BE2A0062485A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C386F61747BE2A0062485A /* CoreData.framework */; };
 		B1C386FA1747C4740062485A /* PIIdea.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C386F91747C4740062485A /* PIIdea.m */; };
@@ -53,8 +52,6 @@
 		B140B88B17476CBD000C1102 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		B158DED91748C68400B23B01 /* PIHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIHomeViewController.h; sourceTree = "<group>"; };
 		B158DEDA1748C68400B23B01 /* PIHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIHomeViewController.m; sourceTree = "<group>"; };
-		B18C43BC1748B3E200985D8B /* PIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIViewController.h; sourceTree = "<group>"; };
-		B18C43BD1748B3E200985D8B /* PIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIViewController.m; sourceTree = "<group>"; };
 		B19ABFD2174911BF0089F005 /* PIIdeaViewObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIIdeaViewObject.h; sourceTree = "<group>"; };
 		B19ABFD3174911BF0089F005 /* PIIdeaViewObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIIdeaViewObject.m; sourceTree = "<group>"; };
 		B1C386F61747BE2A0062485A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -115,8 +112,6 @@
 		B10E89591731C1BE0034194F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B18C43BC1748B3E200985D8B /* PIViewController.h */,
-				B18C43BD1748B3E200985D8B /* PIViewController.m */,
 				B10E895A1731C1BE0034194F /* PICreationViewController.h */,
 				B10E895B1731C1BE0034194F /* PICreationViewController.m */,
 				B158DED91748C68400B23B01 /* PIHomeViewController.h */,
@@ -373,7 +368,6 @@
 				B140B88C17476CBD000C1102 /* Model.xcdatamodeld in Sources */,
 				B1C386FA1747C4740062485A /* PIIdea.m in Sources */,
 				B1C386FD1747C57D0062485A /* PIIdea+CoreData.m in Sources */,
-				B18C43BE1748B3E200985D8B /* PIViewController.m in Sources */,
 				B158DEDB1748C68400B23B01 /* PIHomeViewController.m in Sources */,
 				B19ABFD4174911BF0089F005 /* PIIdeaViewObject.m in Sources */,
 			);
