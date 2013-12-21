@@ -12,10 +12,18 @@
 
 #pragma mark - Factory
 
-+ (PIIdeaViewObject *)ideaWithName:(NSString *)name
++ (PIIdeaViewObject *)ideaWithTitle:(NSString *)title
 {
     PIIdeaViewObject* idea = [[PIIdeaViewObject alloc]init];
-    idea.name = name;
+    idea.title = title;
     return idea;
 }
+
++ (PIIdeaViewObject *)ideaWithTitle:(NSString *)title details:(NSString *)details
+{
+    PIIdeaViewObject *idea = [PIIdeaViewObject ideaWithTitle:title];
+    idea.details = details;
+    return idea;
+}
+
 @end

@@ -10,7 +10,7 @@
 
 @implementation PIIdea (CoreData)
 
-+ (PIIdea *)ideaWithName:(NSString *)title
++ (PIIdea *)ideaWithTitle:(NSString *)title
   inManagedObjectContext:(NSManagedObjectContext *)context
 {
     PIIdea *idea = [NSEntityDescription insertNewObjectForEntityForName:kIdeaEntityName
@@ -19,4 +19,12 @@
     return idea;
 }
 
++ (PIIdea *)ideaWithTitle:(NSString *)title
+                  details:(NSString *)details
+   inManagedObjectContext:(NSManagedObjectContext *)context
+{
+    PIIdea *idea = [PIIdea ideaWithTitle:title inManagedObjectContext:context];
+    idea.details = details;
+    return idea;
+}
 @end

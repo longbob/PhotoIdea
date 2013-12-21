@@ -67,6 +67,7 @@
                                                      name:NSManagedObjectContextDidSaveNotification
                                                    object:self.document.managedObjectContext];
     }
+    
     return self;
 }
 
@@ -103,7 +104,7 @@
 - (void)addIdea:(PIIdeaViewObject *)ideaVO
 {
     [self performWithDocument:^(UIManagedDocument *document) {
-        [PIIdea ideaWithName:ideaVO.name inManagedObjectContext:document.managedObjectContext];
+        [PIIdea ideaWithTitle:ideaVO.title inManagedObjectContext:document.managedObjectContext];
     }];
 }
 

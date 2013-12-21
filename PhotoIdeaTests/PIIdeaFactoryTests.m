@@ -14,11 +14,11 @@
 - (void) testIdeaWithName
 {
     NSString *name = @"Name of the idea";
-    PIIdeaViewObject *idea = [PIIdeaViewObject ideaWithName:name];
+    PIIdeaViewObject *idea = [PIIdeaViewObject ideaWithTitle:name];
 
     STAssertNotNil(idea,
                    @"idea should not be nil");
-    STAssertTrue([idea.name isEqualToString:name],
+    STAssertTrue([idea.title isEqualToString:name],
                  [NSString stringWithFormat:@"Name should be: %@",name]);
 }
 

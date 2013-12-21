@@ -14,7 +14,9 @@
 
 - (IBAction)cancel:(UIBarButtonItem *)sender;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *done;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+@property (weak, nonatomic) IBOutlet UITextField *details;
 
 @end
 
@@ -43,7 +45,12 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"doneAddingIdea"]) {
-        [[PIIdeaManager sharedInstance] addIdea:[PIIdeaViewObject ideaWithName:self.titleTextField.text]];
+        PIIdeaViewObject *idea = [PIIdeaViewObject ideaWithTitle:self.titleTextField.text];
+        if (![self.details.text isEqualToString:@""]) {
+            idea.details = self.details.text;
+        }
+        [[PIIdeaManager sharedInstance] addIdea:idea];
+        
     }
 }
 

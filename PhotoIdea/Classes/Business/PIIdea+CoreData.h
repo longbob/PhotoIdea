@@ -13,6 +13,11 @@
 
 @interface PIIdea (CoreData)
 
-+ (PIIdea *)ideaWithName:(NSString *)title
-  inManagedObjectContext:(NSManagedObjectContext *)context;
++ (PIIdea *)ideaWithTitle:(NSString *)title
+   inManagedObjectContext:(NSManagedObjectContext *)context;
+
++ (PIIdea *)ideaWithTitle:(NSString *)title
+                  details:(NSString *)details
+   inManagedObjectContext:(NSManagedObjectContext *)context;
+
 @end

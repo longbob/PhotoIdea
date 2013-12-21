@@ -2,7 +2,7 @@
 //  PIIdea.h
 //  PhotoIdea
 //
-//  Created by Bertrand Longevialle on 5/18/13.
+//  Created by Bertrand Longevialle on 5/28/13.
 //  Copyright (c) 2013 Longbob. All rights reserved.
 //
 
@@ -12,8 +12,7 @@
 
 @interface PIIdea : NSManagedObject
 
-
-
 @property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSString * details;
 
 @end

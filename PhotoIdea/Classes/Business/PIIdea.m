@@ -2,7 +2,7 @@
 //  PIIdea.m
 //  PhotoIdea
 //
-//  Created by Bertrand Longevialle on 5/18/13.
+//  Created by Bertrand Longevialle on 5/28/13.
 //  Copyright (c) 2013 Longbob. All rights reserved.
 //
 
@@ -12,5 +12,6 @@
 @implementation PIIdea
 
 @dynamic title;
+@dynamic details;
 
 @end

@@ -12,6 +12,8 @@
 		B140B88C17476CBD000C1102 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B140B88A17476CBD000C1102 /* Model.xcdatamodeld */; };
 		B158DEDB1748C68400B23B01 /* PIHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B158DEDA1748C68400B23B01 /* PIHomeViewController.m */; };
 		B19ABFD4174911BF0089F005 /* PIIdeaViewObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B19ABFD3174911BF0089F005 /* PIIdeaViewObject.m */; };
+		B1B4343517520074003765F0 /* PILocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B1B4343417520074003765F0 /* PILocationManager.m */; };
+		B1B43437175200E2003765F0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B43436175200E2003765F0 /* CoreLocation.framework */; };
 		B1C386F71747BE2A0062485A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C386F61747BE2A0062485A /* CoreData.framework */; };
 		B1C386FA1747C4740062485A /* PIIdea.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C386F91747C4740062485A /* PIIdea.m */; };
 		B1C386FD1747C57D0062485A /* PIIdea+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C386FC1747C57D0062485A /* PIIdea+CoreData.m */; };
@@ -54,6 +56,9 @@
 		B158DEDA1748C68400B23B01 /* PIHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIHomeViewController.m; sourceTree = "<group>"; };
 		B19ABFD2174911BF0089F005 /* PIIdeaViewObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIIdeaViewObject.h; sourceTree = "<group>"; };
 		B19ABFD3174911BF0089F005 /* PIIdeaViewObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIIdeaViewObject.m; sourceTree = "<group>"; };
+		B1B4343317520074003765F0 /* PILocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PILocationManager.h; path = Logic/PILocationManager.h; sourceTree = "<group>"; };
+		B1B4343417520074003765F0 /* PILocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PILocationManager.m; path = Logic/PILocationManager.m; sourceTree = "<group>"; };
+		B1B43436175200E2003765F0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B1C386F61747BE2A0062485A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B1C386F81747C4740062485A /* PIIdea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PIIdea.h; path = Classes/Business/PIIdea.h; sourceTree = "<group>"; };
 		B1C386F91747C4740062485A /* PIIdea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PIIdea.m; path = Classes/Business/PIIdea.m; sourceTree = "<group>"; };
@@ -89,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1B43437175200E2003765F0 /* CoreLocation.framework in Frameworks */,
 				B1C386F71747BE2A0062485A /* CoreData.framework in Frameworks */,
 				B1CA2B43173179560010236C /* UIKit.framework in Frameworks */,
 				B1CA2B45173179560010236C /* Foundation.framework in Frameworks */,
@@ -151,6 +157,7 @@
 		B1CA2B41173179560010236C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B1B43436175200E2003765F0 /* CoreLocation.framework */,
 				B1C386F61747BE2A0062485A /* CoreData.framework */,
 				B1CA2B46173179560010236C /* CoreGraphics.framework */,
 				B1CA2B44173179560010236C /* Foundation.framework */,
@@ -173,7 +180,6 @@
 		B1CA2B49173179560010236C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B140B88A17476CBD000C1102 /* Model.xcdatamodeld */,
 				B1CA2B4A173179560010236C /* PhotoIdea-Info.plist */,
 				B1CA2B4B173179560010236C /* InfoPlist.strings */,
 				B1CA2B4E173179560010236C /* main.m */,
@@ -209,6 +215,7 @@
 		B1CA2B83173181640010236C /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				B140B88A17476CBD000C1102 /* Model.xcdatamodeld */,
 				B1C386F81747C4740062485A /* PIIdea.h */,
 				B1C386F91747C4740062485A /* PIIdea.m */,
 				B1C386FB1747C57D0062485A /* PIIdea+CoreData.h */,
@@ -245,6 +252,8 @@
 			children = (
 				B1CA2B9017318D570010236C /* PIIdeaManager.h */,
 				B1CA2B9117318D570010236C /* PIIdeaManager.m */,
+				B1B4343317520074003765F0 /* PILocationManager.h */,
+				B1B4343417520074003765F0 /* PILocationManager.m */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
@@ -370,6 +379,7 @@
 				B1C386FD1747C57D0062485A /* PIIdea+CoreData.m in Sources */,
 				B158DEDB1748C68400B23B01 /* PIHomeViewController.m in Sources */,
 				B19ABFD4174911BF0089F005 /* PIIdeaViewObject.m in Sources */,
+				B1B4343517520074003765F0 /* PILocationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +502,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhotoIdea/PhotoIdea-Prefix.pch";
 				INFOPLIST_FILE = "PhotoIdea/PhotoIdea-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -503,6 +514,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhotoIdea/PhotoIdea-Prefix.pch";
 				INFOPLIST_FILE = "PhotoIdea/PhotoIdea-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

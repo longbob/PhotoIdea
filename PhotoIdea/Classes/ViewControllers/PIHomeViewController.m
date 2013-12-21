@@ -9,10 +9,11 @@
 #import "PIHomeViewController.h"
 #import "PIIdeaManager.h"
 #import "PIIdea+CoreData.h"
+#import <CoreData/CoreData.h>
 
 #define kIdeaCacheName @"ideaCache"
 
-@interface PIHomeViewController ()
+@interface PIHomeViewController ()<UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -22,7 +23,6 @@
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end
-
 
 @implementation PIHomeViewController
 
@@ -120,6 +120,9 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    
+    NSString *title = ((PIIdea *)[self.fetchedResultsController objectAtIndexPath:indexPath]).title;
+    NSLog(title);
 }
 
 #pragma mark - NSFetchedResultsControllerDelegate
