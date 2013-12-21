@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B10E895E1731C1BE0034194F /* PICreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B10E895B1731C1BE0034194F /* PICreationViewController.m */; };
 		B10E89621731C1DF0034194F /* PIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B10E89611731C1DF0034194F /* PIAppDelegate.m */; };
+		B11ABAF71865949500108E60 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B11ABAF61865949500108E60 /* Images.xcassets */; };
 		B140B88C17476CBD000C1102 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B140B88A17476CBD000C1102 /* Model.xcdatamodeld */; };
 		B158DEDB1748C68400B23B01 /* PIHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B158DEDA1748C68400B23B01 /* PIHomeViewController.m */; };
 		B19ABFD4174911BF0089F005 /* PIIdeaViewObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B19ABFD3174911BF0089F005 /* PIIdeaViewObject.m */; };
@@ -22,9 +23,6 @@
 		B1CA2B47173179560010236C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1CA2B46173179560010236C /* CoreGraphics.framework */; };
 		B1CA2B4D173179560010236C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1CA2B4B173179560010236C /* InfoPlist.strings */; };
 		B1CA2B4F173179560010236C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1CA2B4E173179560010236C /* main.m */; };
-		B1CA2B55173179560010236C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B1CA2B54173179560010236C /* Default.png */; };
-		B1CA2B57173179560010236C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1CA2B56173179560010236C /* Default@2x.png */; };
-		B1CA2B59173179560010236C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1CA2B58173179560010236C /* Default-568h@2x.png */; };
 		B1CA2B5C173179560010236C /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1CA2B5A173179560010236C /* MainStoryboard_iPhone.storyboard */; };
 		B1CA2B5F173179560010236C /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1CA2B5D173179560010236C /* MainStoryboard_iPad.storyboard */; };
 		B1CA2B6A173179570010236C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1CA2B69173179570010236C /* SenTestingKit.framework */; };
@@ -51,6 +49,7 @@
 		B10E895B1731C1BE0034194F /* PICreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PICreationViewController.m; sourceTree = "<group>"; };
 		B10E89601731C1DF0034194F /* PIAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIAppDelegate.h; sourceTree = "<group>"; };
 		B10E89611731C1DF0034194F /* PIAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIAppDelegate.m; sourceTree = "<group>"; };
+		B11ABAF61865949500108E60 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B140B88B17476CBD000C1102 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		B158DED91748C68400B23B01 /* PIHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIHomeViewController.h; sourceTree = "<group>"; };
 		B158DEDA1748C68400B23B01 /* PIHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIHomeViewController.m; sourceTree = "<group>"; };
@@ -72,9 +71,6 @@
 		B1CA2B4C173179560010236C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B1CA2B4E173179560010236C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B1CA2B50173179560010236C /* PhotoIdea-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhotoIdea-Prefix.pch"; sourceTree = "<group>"; };
-		B1CA2B54173179560010236C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		B1CA2B56173179560010236C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		B1CA2B58173179560010236C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B1CA2B5B173179560010236C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		B1CA2B5E173179560010236C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		B1CA2B68173179570010236C /* PhotoIdeaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoIdeaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,13 +176,11 @@
 		B1CA2B49173179560010236C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B11ABAF61865949500108E60 /* Images.xcassets */,
 				B1CA2B4A173179560010236C /* PhotoIdea-Info.plist */,
 				B1CA2B4B173179560010236C /* InfoPlist.strings */,
 				B1CA2B4E173179560010236C /* main.m */,
 				B1CA2B50173179560010236C /* PhotoIdea-Prefix.pch */,
-				B1CA2B54173179560010236C /* Default.png */,
-				B1CA2B56173179560010236C /* Default@2x.png */,
-				B1CA2B58173179560010236C /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -331,9 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1CA2B4D173179560010236C /* InfoPlist.strings in Resources */,
-				B1CA2B55173179560010236C /* Default.png in Resources */,
-				B1CA2B57173179560010236C /* Default@2x.png in Resources */,
-				B1CA2B59173179560010236C /* Default-568h@2x.png in Resources */,
+				B11ABAF71865949500108E60 /* Images.xcassets in Resources */,
 				B1CA2B5C173179560010236C /* MainStoryboard_iPhone.storyboard in Resources */,
 				B1CA2B5F173179560010236C /* MainStoryboard_iPad.storyboard in Resources */,
 			);
@@ -499,6 +491,8 @@
 		B1CA2B7B173179570010236C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhotoIdea/PhotoIdea-Prefix.pch";
 				INFOPLIST_FILE = "PhotoIdea/PhotoIdea-Info.plist";
@@ -511,6 +505,8 @@
 		B1CA2B7C173179570010236C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhotoIdea/PhotoIdea-Prefix.pch";
 				INFOPLIST_FILE = "PhotoIdea/PhotoIdea-Info.plist";
