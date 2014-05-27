@@ -6,14 +6,23 @@
 //  Copyright (c) 2013 Longbob. All rights reserved.
 //
 
-#import "PIIdeaManagerTests.h"
+#import <SenTestingKit/SenTestingKit.h>
+
 #import "PIIdeaManager.h"
 #import "PIIdeaViewObject.h"
+
+@interface PIIdeaManagerTests : SenTestCase
+
+@property (nonatomic) PIIdeaManager *manager;
+
+@end
+
+
 @implementation PIIdeaManagerTests
 
 - (void)setUp
 {
-    self.manager = [PIIdeaManager sharedInstance];
+    self.manager = [PIIdeaManager sharedManager];
 }
 
 - (void)tearDown

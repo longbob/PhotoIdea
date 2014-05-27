@@ -7,16 +7,12 @@
 //
 
 #import "PIIdeaManager.h"
-#import <CoreData/CoreData.h>
 #import "PIIdea+CoreData.h"
 #import "PIIdeaViewObject.h"
 
-#define kDocumentNameURL @"MyIdeas.pi"
+NSString *const kDocumentNameURL = @"MyIdeas.pi";
 
 @interface PIIdeaManager ()
-
-- (void)objectsDidChange:(NSNotification *)notification;
-- (void)contextDidSave:(NSNotification *)notification;
 
 @property (nonatomic) UIManagedDocument *document;
 
@@ -27,13 +23,13 @@
 
 #pragma mark - Singleton
 
-+ (instancetype)sharedInstance
++ (instancetype)sharedManager
 {
     static PIIdeaManager *shared = nil;
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        shared = [[PIIdeaManager alloc]init];
+        shared = [self new];
     });
     return shared;
 }
@@ -48,17 +44,21 @@
                                                              inDomains:NSUserDomainMask] lastObject];
         url = [url URLByAppendingPathComponent:kDocumentNameURL];
         
-        self.document = [[UIManagedDocument alloc] initWithFileURL:url];
+        _document = [[UIManagedDocument alloc] initWithFileURL:url];
         
-        // Set our document up for automatic migrations
-        NSDictionary *options = @{NSMigratePersistentStoresAutomaticallyOption: @YES,
-                                 NSInferMappingModelAutomaticallyOption: @YES};
-        self.document.persistentStoreOptions = options;
+        _document.persistentStoreOptions = @{NSMigratePersistentStoresAutomaticallyOption: @YES,
+                                                   NSInferMappingModelAutomaticallyOption: @YES};
         
         [self registerForObjectContextNotification];
     }
     
     return self;
+}
+
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)registerForObjectContextNotification

@@ -13,7 +13,7 @@ typedef void(^OnDocumentClosed)();
 
 @interface PIIdeaManager : NSObject
 
-+ (instancetype)sharedInstance;
++ (instancetype)sharedManager;
 
 - (void)performWithDocument:(OnDocumentReady)onDocumentReady;
 - (void)closeDocument:(OnDocumentClosed)onDocumentClosed;

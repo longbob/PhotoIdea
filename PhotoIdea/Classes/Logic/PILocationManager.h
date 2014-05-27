@@ -6,8 +6,7 @@
 //  Copyright (c) 2013 Longbob. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
+@import CoreLocation;
 
 @interface PILocationManager : NSObject<CLLocationManagerDelegate>
 

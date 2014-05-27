@@ -9,7 +9,6 @@
 #import "PIHomeViewController.h"
 #import "PIIdeaManager.h"
 #import "PIIdea+CoreData.h"
-#import <CoreData/CoreData.h>
 
 NSString *const kIdeaCacheName = @"ideaCache";
 
@@ -30,7 +29,7 @@ NSString *const kIdeaCacheName = @"ideaCache";
 {
     [super viewDidLoad];
     
-    [[PIIdeaManager sharedInstance] performWithDocument:^(UIManagedDocument *document) {
+    [[PIIdeaManager sharedManager] performWithDocument:^(UIManagedDocument *document) {
         
         self.document = document;
         NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:kIdeaEntityName];

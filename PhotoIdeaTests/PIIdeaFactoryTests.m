@@ -6,8 +6,13 @@
 //  Copyright (c) 2013 Longbob. All rights reserved.
 //
 
-#import "PIIdeaFactoryTests.h"
 #import "PIIdeaViewObject.h"
+
+#import <SenTestingKit/SenTestingKit.h>
+
+@interface PIIdeaFactoryTests : SenTestCase
+
+@end
 
 @implementation PIIdeaFactoryTests
 
@@ -16,10 +21,7 @@
     NSString *name = @"Name of the idea";
     PIIdeaViewObject *idea = [PIIdeaViewObject ideaWithTitle:name];
 
-    STAssertNotNil(idea,
-                   @"idea should not be nil");
-    STAssertTrue([idea.title isEqualToString:name],
-                 [NSString stringWithFormat:@"Name should be: %@",name]);
+    STAssertTrue([idea.title isEqualToString:name], [NSString stringWithFormat:@"Name should be: %@",name]);
 }
 
 @end

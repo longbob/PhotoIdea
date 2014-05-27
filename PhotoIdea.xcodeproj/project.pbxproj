@@ -77,11 +77,9 @@
 		B1CA2B69173179570010236C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		B1CA2B71173179570010236C /* PhotoIdeaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhotoIdeaTests-Info.plist"; sourceTree = "<group>"; };
 		B1CA2B73173179570010236C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B1CA2B86173185FA0010236C /* PIIdeaFactoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIIdeaFactoryTests.h; sourceTree = "<group>"; };
 		B1CA2B87173185FA0010236C /* PIIdeaFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIIdeaFactoryTests.m; sourceTree = "<group>"; };
 		B1CA2B9017318D570010236C /* PIIdeaManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PIIdeaManager.h; path = Logic/PIIdeaManager.h; sourceTree = "<group>"; };
 		B1CA2B9117318D570010236C /* PIIdeaManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PIIdeaManager.m; path = Logic/PIIdeaManager.m; sourceTree = "<group>"; };
-		B1CA2B9317318D830010236C /* PIIdeaManagerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PIIdeaManagerTests.h; path = Logic/PIIdeaManagerTests.h; sourceTree = "<group>"; };
 		B1CA2B9417318D830010236C /* PIIdeaManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PIIdeaManagerTests.m; path = Logic/PIIdeaManagerTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,8 +186,6 @@
 		B1CA2B6F173179570010236C /* PhotoIdeaTests */ = {
 			isa = PBXGroup;
 			children = (
-				B1CA2B86173185FA0010236C /* PIIdeaFactoryTests.h */,
-				B1CA2B9317318D830010236C /* PIIdeaManagerTests.h */,
 				B1CA2B87173185FA0010236C /* PIIdeaFactoryTests.m */,
 				B1CA2B9417318D830010236C /* PIIdeaManagerTests.m */,
 				B1CA2B70173179570010236C /* Supporting Files */,
@@ -436,6 +432,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -468,6 +465,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -493,6 +491,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhotoIdea/PhotoIdea-Prefix.pch";
 				INFOPLIST_FILE = "PhotoIdea/PhotoIdea-Info.plist";
@@ -507,6 +506,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhotoIdea/PhotoIdea-Prefix.pch";
 				INFOPLIST_FILE = "PhotoIdea/PhotoIdea-Info.plist";
@@ -520,6 +520,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PhotoIdea.app/PhotoIdea";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -537,6 +538,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PhotoIdea.app/PhotoIdea";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",

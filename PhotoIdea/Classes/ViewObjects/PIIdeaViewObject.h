@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Longbob. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @interface PIIdeaViewObject : NSObject
 
 @property (nonatomic) NSString *title;

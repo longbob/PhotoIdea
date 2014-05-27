@@ -36,7 +36,7 @@
         if (![self.details.text isEqualToString:@""]) {
             idea.details = self.details.text;
         }
-        [[PIIdeaManager sharedInstance] addIdea:idea];
+        [[PIIdeaManager sharedManager] addIdea:idea];
         
     }
 }

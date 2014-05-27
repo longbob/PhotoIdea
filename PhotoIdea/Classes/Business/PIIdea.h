@@ -6,8 +6,7 @@
 //  Copyright (c) 2013 Longbob. All rights reserved.
 //
 
-#import <CoreData/CoreData.h>
-
+@import CoreData;
 
 @interface PIIdea : NSManagedObject
 
