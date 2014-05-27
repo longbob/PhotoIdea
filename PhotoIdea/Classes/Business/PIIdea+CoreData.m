@@ -8,10 +8,12 @@
 
 #import "PIIdea+CoreData.h"
 
+NSString *const kIdeaEntityName = @"PIIdea";
+NSString *const kTitleKey = @"title";
+
 @implementation PIIdea (CoreData)
 
-+ (PIIdea *)ideaWithTitle:(NSString *)title
-  inManagedObjectContext:(NSManagedObjectContext *)context
++ (instancetype)ideaWithTitle:(NSString *)title inManagedObjectContext:(NSManagedObjectContext *)context
 {
     PIIdea *idea = [NSEntityDescription insertNewObjectForEntityForName:kIdeaEntityName
                                                  inManagedObjectContext:context];
@@ -19,9 +21,7 @@
     return idea;
 }
 
-+ (PIIdea *)ideaWithTitle:(NSString *)title
-                  details:(NSString *)details
-   inManagedObjectContext:(NSManagedObjectContext *)context
++ (instancetype)ideaWithTitle:(NSString *)title details:(NSString *)details inManagedObjectContext:(NSManagedObjectContext *)context
 {
     PIIdea *idea = [PIIdea ideaWithTitle:title inManagedObjectContext:context];
     idea.details = details;

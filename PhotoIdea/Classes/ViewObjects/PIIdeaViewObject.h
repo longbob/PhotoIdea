@@ -10,15 +10,15 @@
 
 @interface PIIdeaViewObject : NSObject
 
-@property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSString *details;
+@property (nonatomic) NSString *title;
+@property (nonatomic) NSString *details;
 
 @end
 
 @interface PIIdeaViewObject (Factory)
 
-+(PIIdeaViewObject *)ideaWithTitle:(NSString *)title;
-+(PIIdeaViewObject *)ideaWithTitle:(NSString *)title details:(NSString *)details;
++(instancetype)ideaWithTitle:(NSString *)title;
++(instancetype)ideaWithTitle:(NSString *)title details:(NSString *)details;
 
 
 @end

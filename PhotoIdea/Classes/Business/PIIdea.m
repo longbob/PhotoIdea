@@ -8,7 +8,6 @@
 
 #import "PIIdea.h"
 
-
 @implementation PIIdea
 
 @dynamic title;

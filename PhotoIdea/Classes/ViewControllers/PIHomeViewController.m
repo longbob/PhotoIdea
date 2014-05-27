@@ -11,16 +11,16 @@
 #import "PIIdea+CoreData.h"
 #import <CoreData/CoreData.h>
 
-#define kIdeaCacheName @"ideaCache"
+NSString *const kIdeaCacheName = @"ideaCache";
 
 @interface PIHomeViewController ()<UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
 
 - (IBAction)doneAddingIdea:(UIStoryboardSegue *)segue;
 
 @property (nonatomic, weak) UIManagedDocument *document;
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
@@ -34,8 +34,7 @@
         
         self.document = document;
         NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:kIdeaEntityName];
-        request.sortDescriptors = [NSArray arrayWithObject:
-                                   [NSSortDescriptor sortDescriptorWithKey:kTitleKey
+        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:kTitleKey
                                                                  ascending:YES
                                                                   selector:@selector(localizedCaseInsensitiveCompare:)]];
         
@@ -71,12 +70,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[[self.fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
+    return [[self.fetchedResultsController sections][section] numberOfObjects];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [[[self.fetchedResultsController sections] objectAtIndex:section] name];
+    return [[self.fetchedResultsController sections][section] name];
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
@@ -122,7 +121,7 @@
      */
     
     NSString *title = ((PIIdea *)[self.fetchedResultsController objectAtIndexPath:indexPath]).title;
-    NSLog(title);
+    NSLog(@"title: %@", title);
 }
 
 #pragma mark - NSFetchedResultsControllerDelegate
@@ -169,12 +168,12 @@
     switch(type) {
             
         case NSFetchedResultsChangeInsert:
-            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+            [tableView insertRowsAtIndexPaths:@[newIndexPath]
                              withRowAnimation:UITableViewRowAnimationFade];
             break;
             
         case NSFetchedResultsChangeDelete:
-            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+            [tableView deleteRowsAtIndexPaths:@[indexPath]
                              withRowAnimation:UITableViewRowAnimationFade];
             break;
             
@@ -185,9 +184,9 @@
             break;
             
         case NSFetchedResultsChangeMove:
-            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+            [tableView deleteRowsAtIndexPaths:@[indexPath]
                              withRowAnimation:UITableViewRowAnimationFade];
-            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+            [tableView insertRowsAtIndexPaths:@[newIndexPath]
                              withRowAnimation:UITableViewRowAnimationFade];
             break;
     }

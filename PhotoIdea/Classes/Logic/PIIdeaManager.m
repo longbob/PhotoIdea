@@ -18,7 +18,7 @@
 - (void)objectsDidChange:(NSNotification *)notification;
 - (void)contextDidSave:(NSNotification *)notification;
 
-@property (nonatomic, strong) UIManagedDocument *document;
+@property (nonatomic) UIManagedDocument *document;
 
 @end
 
@@ -27,7 +27,7 @@
 
 #pragma mark - Singleton
 
-+ (PIIdeaManager *)sharedInstance
++ (instancetype)sharedInstance
 {
     static PIIdeaManager *shared = nil;
     
@@ -40,7 +40,7 @@
 
 #pragma mark - Initialization
 
-- (id)init
+- (instancetype)init
 {
     if (self = [super init]) {
         
@@ -51,24 +51,27 @@
         self.document = [[UIManagedDocument alloc] initWithFileURL:url];
         
         // Set our document up for automatic migrations
-        NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
-                                 [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
-                                 [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
+        NSDictionary *options = @{NSMigratePersistentStoresAutomaticallyOption: @YES,
+                                 NSInferMappingModelAutomaticallyOption: @YES};
         self.document.persistentStoreOptions = options;
         
-        // Register for notifications
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(objectsDidChange:)
-                                                     name:NSManagedObjectContextObjectsDidChangeNotification
-                                                   object:self.document.managedObjectContext];
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(contextDidSave:)
-                                                     name:NSManagedObjectContextDidSaveNotification
-                                                   object:self.document.managedObjectContext];
+        [self registerForObjectContextNotification];
     }
     
     return self;
+}
+
+- (void)registerForObjectContextNotification
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(objectsDidChange:)
+                                                 name:NSManagedObjectContextObjectsDidChangeNotification
+                                               object:self.document.managedObjectContext];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(contextDidSave:)
+                                                 name:NSManagedObjectContextDidSaveNotification
+                                               object:self.document.managedObjectContext];
 }
 
 #pragma mark - Document

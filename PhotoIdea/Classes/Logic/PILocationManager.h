@@ -11,6 +11,6 @@
 
 @interface PILocationManager : NSObject<CLLocationManagerDelegate>
 
-+ (PILocationManager *)sharedInstance;
++ (instancetype)sharedInstance;
 
 @end

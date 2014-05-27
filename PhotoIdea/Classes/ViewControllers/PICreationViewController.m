@@ -12,27 +12,14 @@
 
 @interface PICreationViewController ()
 
-- (IBAction)cancel:(UIBarButtonItem *)sender;
-
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *done;
-@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
-@property (weak, nonatomic) IBOutlet UITextField *details;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *done;
+@property (nonatomic, weak) IBOutlet UITextField *titleTextField;
+@property (nonatomic, weak) IBOutlet UITextField *details;
 
 @end
 
+
 @implementation PICreationViewController
-
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - actions
 

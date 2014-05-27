@@ -8,16 +8,16 @@
 
 #import "PIIdea.h"
 
-#define kIdeaEntityName @"PIIdea"
-#define kTitleKey @"title"
+extern NSString *const kIdeaEntityName;
+extern NSString *const kTitleKey;
 
 @interface PIIdea (CoreData)
 
-+ (PIIdea *)ideaWithTitle:(NSString *)title
-   inManagedObjectContext:(NSManagedObjectContext *)context;
++ (instancetype)ideaWithTitle:(NSString *)title
+       inManagedObjectContext:(NSManagedObjectContext *)context;
 
-+ (PIIdea *)ideaWithTitle:(NSString *)title
-                  details:(NSString *)details
-   inManagedObjectContext:(NSManagedObjectContext *)context;
++ (instancetype)ideaWithTitle:(NSString *)title
+                      details:(NSString *)details
+       inManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end

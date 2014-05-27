@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Longbob. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @class PIIdeaViewObject;
 
 typedef void(^OnDocumentReady)(UIManagedDocument *document);
@@ -15,7 +13,7 @@ typedef void(^OnDocumentClosed)();
 
 @interface PIIdeaManager : NSObject
 
-+ (PIIdeaManager *)sharedInstance;
++ (instancetype)sharedInstance;
 
 - (void)performWithDocument:(OnDocumentReady)onDocumentReady;
 - (void)closeDocument:(OnDocumentClosed)onDocumentClosed;
