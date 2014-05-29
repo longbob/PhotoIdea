@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Longbob. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 #import "PIAppDelegate.h"
 
 int main(int argc, char *argv[])

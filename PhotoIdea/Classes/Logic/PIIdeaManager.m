@@ -107,7 +107,8 @@ NSString *const kDocumentNameURL = @"MyIdeas.pi";
 - (void)addIdea:(PIIdeaViewObject *)ideaVO
 {
     [self performWithDocument:^(UIManagedDocument *document) {
-        [PIIdea ideaWithTitle:ideaVO.title inManagedObjectContext:document.managedObjectContext];
+        [PIIdea ideaWithTitle:ideaVO.title
+                      details:ideaVO.details inManagedObjectContext:document.managedObjectContext];
     }];
 }
 
