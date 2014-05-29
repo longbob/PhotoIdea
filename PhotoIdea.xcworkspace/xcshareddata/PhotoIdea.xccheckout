@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5BB6EA21-6051-4627-8735-5453B3F2EC26</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PhotoIdea</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C3105BF4-BD37-469E-A437-222A8E2DCF20</key>
+		<string>https://github.com/longbob/PhotoIdea.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PhotoIdea.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C3105BF4-BD37-469E-A437-222A8E2DCF20</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/longbob/PhotoIdea.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C3105BF4-BD37-469E-A437-222A8E2DCF20</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C3105BF4-BD37-469E-A437-222A8E2DCF20</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PhotoIdea</string>
+		</dict>
+	</array>
+</dict>
+</plist>
