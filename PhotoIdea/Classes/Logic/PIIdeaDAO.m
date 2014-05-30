@@ -23,6 +23,7 @@ NSString *const kDocumentNameURL = @"MyIdeas.pi";
 @interface PIIdeaDAO ()
 
 @property (nonatomic) UIManagedDocument *document;
+@property (nonatomic) NSArray *contextObservers;
 
 @end
 
@@ -65,20 +66,32 @@ NSString *const kDocumentNameURL = @"MyIdeas.pi";
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self.contextObservers];
 }
 
 - (void)registerForObjectContextNotification
 {
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(objectsDidChange:)
-                                                 name:NSManagedObjectContextObjectsDidChangeNotification
-                                               object:self.document.managedObjectContext];
+    NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(contextDidSave:)
-                                                 name:NSManagedObjectContextDidSaveNotification
-                                               object:self.document.managedObjectContext];
+    self.contextObservers = @[
+    [[NSNotificationCenter defaultCenter]addObserverForName:NSManagedObjectContextObjectsDidChangeNotification
+                                                     object:self.document.managedObjectContext
+                                                      queue:mainQueue
+                                                 usingBlock:^(NSNotification *note) {
+#ifdef DEBUG
+                                                     NSLog(@"NSManagedObjects did change.");
+#endif
+                                                 }],
+    [[NSNotificationCenter defaultCenter] addObserverForName:NSManagedObjectContextDidSaveNotification
+                                                      object:self.document.managedObjectContext
+                                                       queue:mainQueue
+                                                  usingBlock:^(NSNotification *note) {
+#ifdef DEBUG
+                                                      NSLog(@"NSManagedContext did save.");
+#endif
+                                                  }]
+    ];
+    
 }
 
 #pragma mark - Document
@@ -124,22 +137,6 @@ NSString *const kDocumentNameURL = @"MyIdeas.pi";
         [PIIdea ideaWithTitle:ideaVO.title
                       details:ideaVO.details inManagedObjectContext:document.managedObjectContext];
     }];
-}
-
-#pragma mark - NSNotification
-
-- (void)objectsDidChange:(NSNotification *)notification
-{
-#ifdef DEBUG
-    NSLog(@"NSManagedObjects did change.");
-#endif
-}
-
-- (void)contextDidSave:(NSNotification *)notification
-{
-#ifdef DEBUG
-    NSLog(@"NSManagedContext did save.");
-#endif
 }
 
 
