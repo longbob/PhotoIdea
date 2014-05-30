@@ -11,9 +11,9 @@
 typedef void(^OnDocumentReady)(UIManagedDocument *document);
 typedef void(^OnDocumentClosed)();
 
-@interface PIIdeaManager : NSObject
+@interface PIIdeaDAO : NSObject
 
-+ (instancetype)sharedManager;
++ (instancetype)sharedDAO;
 
 - (void)performWithDocument:(OnDocumentReady)onDocumentReady;
 - (void)closeDocument:(OnDocumentClosed)onDocumentClosed;

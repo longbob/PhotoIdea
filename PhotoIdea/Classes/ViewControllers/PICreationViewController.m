@@ -10,7 +10,7 @@
 
 #import "PICreationViewController.h"
 
-#import "PIIdeaManager.h"
+#import "PIIdeaDAO.h"
 #import "PIIdeaViewObject.h"
 
 @interface PICreationViewController ()
@@ -61,7 +61,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"doneAddingIdea"]) {
-        [[PIIdeaManager sharedManager] addIdea:[PIIdeaViewObject ideaWithTitle:self.titleTextField.text
+        [[PIIdeaDAO sharedDAO] addIdea:[PIIdeaViewObject ideaWithTitle:self.titleTextField.text
                                                                        details:self.details.text]];
     }
 }

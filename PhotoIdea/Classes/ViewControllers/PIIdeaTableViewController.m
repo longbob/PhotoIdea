@@ -8,7 +8,9 @@
 
 #import "PIIdeaTableViewController.h"
 
-#import "PIIdeaManager.h"
+#import <ReactiveCocoa/RACEXTScope.h>
+
+#import "PIIdeaDAO.h"
 #import "PIIdea+CoreData.h"
 #import "PIDetailViewController.h"
 
@@ -27,9 +29,9 @@ NSString *const kIdeaCacheName = @"ideaCache";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [[PIIdeaManager sharedManager] performWithDocument:^(UIManagedDocument *document) {
-        
+    @weakify(self);
+    [[PIIdeaDAO sharedDAO] performWithDocument:^(UIManagedDocument *document) {
+        @strongify(self);
         self.document = document;
         NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:kIdeaEntityName];
         request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:kTitleKey

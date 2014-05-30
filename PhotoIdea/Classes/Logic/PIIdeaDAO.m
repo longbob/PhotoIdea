@@ -6,26 +6,33 @@
 //  Copyright (c) 2013 Longbob. All rights reserved.
 //
 
-#import "PIIdeaManager.h"
+#import "PIIdeaDAO.h"
 #import "PIIdea+CoreData.h"
 #import "PIIdeaViewObject.h"
 
 NSString *const kDocumentNameURL = @"MyIdeas.pi";
 
-@interface PIIdeaManager ()
+@interface UIManagedDocument (helpers)
+
+- (BOOL)existsOnDisk;
+- (BOOL)isClosed;
+- (BOOL)isNormal;
+
+@end
+
+@interface PIIdeaDAO ()
 
 @property (nonatomic) UIManagedDocument *document;
 
 @end
 
-
-@implementation PIIdeaManager
+@implementation PIIdeaDAO
 
 #pragma mark - Singleton
 
-+ (instancetype)sharedManager
++ (instancetype)sharedDAO
 {
-    static PIIdeaManager *shared = nil;
+    static PIIdeaDAO *shared = nil;
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -78,18 +85,25 @@ NSString *const kDocumentNameURL = @"MyIdeas.pi";
 
 - (void)performWithDocument:(OnDocumentReady)onDocumentReady
 {
-    void (^OnDocumentDidLoad)(BOOL) = ^(BOOL success) {
-        onDocumentReady(self.document);
+    void (^onDocumentDidLoad)(BOOL) = ^(BOOL success) {
+        if (success) {
+            onDocumentReady(self.document);
+        }
     };
     
-    if (![[NSFileManager defaultManager]fileExistsAtPath:[self.document.fileURL path]]) {
+    if (![self.document existsOnDisk])
+    {
         [self.document saveToURL:self.document.fileURL
                 forSaveOperation:UIDocumentSaveForCreating
-               completionHandler:OnDocumentDidLoad];
-    } else if (self.document.documentState == UIDocumentStateClosed) {
-        [self.document openWithCompletionHandler:OnDocumentDidLoad];
-    } else if (self.document.documentState == UIDocumentStateNormal) {
-        OnDocumentDidLoad(YES);
+               completionHandler:onDocumentDidLoad];
+    }
+    else if ([self.document isClosed])
+    {
+        [self.document openWithCompletionHandler:onDocumentDidLoad];
+    }
+    else if ([self.document isNormal])
+    {
+        onDocumentDidLoad(YES);
     }
 }
 
@@ -128,5 +142,24 @@ NSString *const kDocumentNameURL = @"MyIdeas.pi";
 #endif
 }
 
+
+@end
+
+@implementation UIManagedDocument (helpers)
+
+-(BOOL)existsOnDisk
+{
+    return [[NSFileManager defaultManager] fileExistsAtPath:[self.fileURL path]];
+}
+
+-(BOOL)isClosed
+{
+    return self.documentState == UIDocumentStateClosed;
+}
+
+-(BOOL)isNormal
+{
+    return self.documentState == UIDocumentStateNormal;
+}
 
 @end

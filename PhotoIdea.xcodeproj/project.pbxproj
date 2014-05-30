@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5C672BBAC36A4C8BBD5509EF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF3718A5ED74E29B3B91955 /* libPods.a */; };
+		88D9FC90970E43A18E4FA14B /* libPods-PhotoIdeaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94713BD7D3454A3F8D449103 /* libPods-PhotoIdeaTests.a */; };
 		B10E895E1731C1BE0034194F /* PICreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B10E895B1731C1BE0034194F /* PICreationViewController.m */; };
 		B10E89621731C1DF0034194F /* PIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B10E89611731C1DF0034194F /* PIAppDelegate.m */; };
 		B11ABAF71865949500108E60 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B11ABAF61865949500108E60 /* Images.xcassets */; };
+		B1271CF1193855E6005E6FAC /* PIIdeaDAOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B1271CF0193855E6005E6FAC /* PIIdeaDAOTests.m */; };
 		B140B88C17476CBD000C1102 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B140B88A17476CBD000C1102 /* Model.xcdatamodeld */; };
 		B158DEDB1748C68400B23B01 /* PIHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B158DEDA1748C68400B23B01 /* PIHomeViewController.m */; };
 		B19ABFD4174911BF0089F005 /* PIIdeaViewObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B19ABFD3174911BF0089F005 /* PIIdeaViewObject.m */; };
@@ -26,8 +28,7 @@
 		B1CA2B6A173179570010236C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1CA2B69173179570010236C /* SenTestingKit.framework */; };
 		B1CA2B74173179570010236C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1CA2B72173179570010236C /* InfoPlist.strings */; };
 		B1CA2B88173185FA0010236C /* PIIdeaFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B1CA2B87173185FA0010236C /* PIIdeaFactoryTests.m */; };
-		B1CA2B9217318D570010236C /* PIIdeaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B1CA2B9117318D570010236C /* PIIdeaManager.m */; };
-		B1CA2B9517318D830010236C /* PIIdeaManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B1CA2B9417318D830010236C /* PIIdeaManagerTests.m */; };
+		B1CA2B9217318D570010236C /* PIIdeaDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = B1CA2B9117318D570010236C /* PIIdeaDAO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,12 +43,15 @@
 
 /* Begin PBXFileReference section */
 		1BF3718A5ED74E29B3B91955 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BB9DB9F25C345F188A3D33D /* Pods-PhotoIdeaTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoIdeaTests.xcconfig"; path = "Pods/Pods-PhotoIdeaTests.xcconfig"; sourceTree = "<group>"; };
 		522DC1286195435D81C64D95 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		94713BD7D3454A3F8D449103 /* libPods-PhotoIdeaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhotoIdeaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B10E895A1731C1BE0034194F /* PICreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PICreationViewController.h; sourceTree = "<group>"; };
 		B10E895B1731C1BE0034194F /* PICreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PICreationViewController.m; sourceTree = "<group>"; };
 		B10E89601731C1DF0034194F /* PIAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIAppDelegate.h; sourceTree = "<group>"; };
 		B10E89611731C1DF0034194F /* PIAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIAppDelegate.m; sourceTree = "<group>"; };
 		B11ABAF61865949500108E60 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B1271CF0193855E6005E6FAC /* PIIdeaDAOTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIIdeaDAOTests.m; sourceTree = "<group>"; };
 		B140B88B17476CBD000C1102 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		B158DED91748C68400B23B01 /* PIHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIHomeViewController.h; sourceTree = "<group>"; };
 		B158DEDA1748C68400B23B01 /* PIHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIHomeViewController.m; sourceTree = "<group>"; };
@@ -75,9 +79,8 @@
 		B1CA2B71173179570010236C /* PhotoIdeaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhotoIdeaTests-Info.plist"; sourceTree = "<group>"; };
 		B1CA2B73173179570010236C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B1CA2B87173185FA0010236C /* PIIdeaFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIIdeaFactoryTests.m; sourceTree = "<group>"; };
-		B1CA2B9017318D570010236C /* PIIdeaManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PIIdeaManager.h; path = Logic/PIIdeaManager.h; sourceTree = "<group>"; };
-		B1CA2B9117318D570010236C /* PIIdeaManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PIIdeaManager.m; path = Logic/PIIdeaManager.m; sourceTree = "<group>"; };
-		B1CA2B9417318D830010236C /* PIIdeaManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PIIdeaManagerTests.m; path = Logic/PIIdeaManagerTests.m; sourceTree = "<group>"; };
+		B1CA2B9017318D570010236C /* PIIdeaDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PIIdeaDAO.h; path = Logic/PIIdeaDAO.h; sourceTree = "<group>"; };
+		B1CA2B9117318D570010236C /* PIIdeaDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PIIdeaDAO.m; path = Logic/PIIdeaDAO.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1CA2B6A173179570010236C /* SenTestingKit.framework in Frameworks */,
+				88D9FC90970E43A18E4FA14B /* libPods-PhotoIdeaTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +119,14 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		B1271CEF193855E6005E6FAC /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				B1271CF0193855E6005E6FAC /* PIIdeaDAOTests.m */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
 		B1C387011747CD140062485A /* ViewObjects */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +144,7 @@
 				B1CA2B41173179560010236C /* Frameworks */,
 				B1CA2B40173179560010236C /* Products */,
 				522DC1286195435D81C64D95 /* Pods.xcconfig */,
+				3BB9DB9F25C345F188A3D33D /* Pods-PhotoIdeaTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +162,7 @@
 			children = (
 				B1CA2B69173179570010236C /* SenTestingKit.framework */,
 				1BF3718A5ED74E29B3B91955 /* libPods.a */,
+				94713BD7D3454A3F8D449103 /* libPods-PhotoIdeaTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -178,8 +192,8 @@
 		B1CA2B6F173179570010236C /* PhotoIdeaTests */ = {
 			isa = PBXGroup;
 			children = (
+				B1271CEF193855E6005E6FAC /* Logic */,
 				B1CA2B87173185FA0010236C /* PIIdeaFactoryTests.m */,
-				B1CA2B9417318D830010236C /* PIIdeaManagerTests.m */,
 				B1CA2B70173179570010236C /* Supporting Files */,
 			);
 			path = PhotoIdeaTests;
@@ -232,8 +246,8 @@
 		B1CA2B8F17318D2D0010236C /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				B1CA2B9017318D570010236C /* PIIdeaManager.h */,
-				B1CA2B9117318D570010236C /* PIIdeaManager.m */,
+				B1CA2B9017318D570010236C /* PIIdeaDAO.h */,
+				B1CA2B9117318D570010236C /* PIIdeaDAO.m */,
 				B1B4343317520074003765F0 /* PILocationManager.h */,
 				B1B4343417520074003765F0 /* PILocationManager.m */,
 			);
@@ -266,10 +280,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B1CA2B7D173179570010236C /* Build configuration list for PBXNativeTarget "PhotoIdeaTests" */;
 			buildPhases = (
+				54C65EDB9BF54A81B0269BA1 /* Check Pods Manifest.lock */,
 				B1CA2B63173179570010236C /* Sources */,
 				B1CA2B64173179570010236C /* Frameworks */,
 				B1CA2B65173179570010236C /* Resources */,
 				B1CA2B66173179570010236C /* ShellScript */,
+				835AE2528BDF465489EBB8E9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -333,6 +349,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		54C65EDB9BF54A81B0269BA1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		554F05CA36C24E0CB67523C2 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -363,6 +394,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		835AE2528BDF465489EBB8E9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-PhotoIdeaTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B1CA2B66173179570010236C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -384,7 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1CA2B4F173179560010236C /* main.m in Sources */,
-				B1CA2B9217318D570010236C /* PIIdeaManager.m in Sources */,
+				B1CA2B9217318D570010236C /* PIIdeaDAO.m in Sources */,
 				B10E895E1731C1BE0034194F /* PICreationViewController.m in Sources */,
 				B1B6F3341937DB6B00490652 /* PIIdeaTableViewController.m in Sources */,
 				B10E89621731C1DF0034194F /* PIAppDelegate.m in Sources */,
@@ -403,7 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1CA2B88173185FA0010236C /* PIIdeaFactoryTests.m in Sources */,
-				B1CA2B9517318D830010236C /* PIIdeaManagerTests.m in Sources */,
+				B1271CF1193855E6005E6FAC /* PIIdeaDAOTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +593,7 @@
 		};
 		B1CA2B7E173179570010236C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BB9DB9F25C345F188A3D33D /* Pods-PhotoIdeaTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PhotoIdea.app/PhotoIdea";
 				CLANG_ENABLE_MODULES = YES;
@@ -557,6 +604,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhotoIdea/PhotoIdea-Prefix.pch";
 				INFOPLIST_FILE = "PhotoIdeaTests/PhotoIdeaTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -565,6 +616,7 @@
 		};
 		B1CA2B7F173179570010236C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BB9DB9F25C345F188A3D33D /* Pods-PhotoIdeaTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PhotoIdea.app/PhotoIdea";
 				CLANG_ENABLE_MODULES = YES;
@@ -575,6 +627,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhotoIdea/PhotoIdea-Prefix.pch";
 				INFOPLIST_FILE = "PhotoIdeaTests/PhotoIdeaTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;

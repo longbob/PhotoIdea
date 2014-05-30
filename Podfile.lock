@@ -1,4 +1,5 @@
 PODS:
+  - OCMock (2.2.4)
   - ReactiveCocoa (2.3.1):
     - ReactiveCocoa/UI
   - ReactiveCocoa/Core (2.3.1):
@@ -8,9 +9,11 @@ PODS:
     - ReactiveCocoa/Core
 
 DEPENDENCIES:
+  - OCMock
   - ReactiveCocoa
 
 SPEC CHECKSUMS:
+  OCMock: 6db79185520e24f9f299548f2b8b07e41d881bd5
   ReactiveCocoa: dca75777b9d18990c8714a3a6f2149f29b4d1462
 
 COCOAPODS: 0.33.1
