@@ -33,21 +33,18 @@
 - (void)configureReactiveDoneEnabling
 {
     id(^textValidator)(NSString *) = ^id(NSString *text) {
-        return @(text.length > 0);
+        return @(text.length);
     };
     
     RACSignal *titleValidSignal = [self.titleTextField.rac_textSignal map:textValidator];
     RACSignal *detailsValidSignal = [self.details.rac_textSignal      map:textValidator];
     
-    [[RACSignal combineLatest:@[titleValidSignal,detailsValidSignal]
-                       reduce:^id(NSNumber *titleValid, NSNumber *detailsValid)
-                        {
-                           return @(titleValid.boolValue && detailsValid.boolValue);
-                        }]
-                subscribeNext:^(NSNumber *enabled)
-                        {
-                            self.done.enabled = enabled.boolValue;
-                        }];
+    RAC(self.done,enabled) =
+    [RACSignal combineLatest:@[titleValidSignal,detailsValidSignal]
+                      reduce:^id(NSNumber *titleValid, NSNumber *detailsValid)
+     {
+         return @(titleValid.boolValue && detailsValid.boolValue);
+     }];
 }
 
 #pragma mark - actions
@@ -62,7 +59,7 @@
 {
     if ([segue.identifier isEqualToString:@"doneAddingIdea"]) {
         [[PIIdeaDAO sharedDAO] addIdea:[PIIdeaViewObject ideaWithTitle:self.titleTextField.text
-                                                                       details:self.details.text]];
+                                                               details:self.details.text]];
     }
 }
 
