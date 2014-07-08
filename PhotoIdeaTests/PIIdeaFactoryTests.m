@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 Longbob. All rights reserved.
 //
 
+@import XCTest;
+
 #import "PIIdeaViewObject.h"
 
-#import <SenTestingKit/SenTestingKit.h>
-
-@interface PIIdeaFactoryTests : SenTestCase
+@interface PIIdeaFactoryTests : XCTestCase
 
 @end
 
@@ -21,7 +21,7 @@
     NSString *name = @"Name of the idea";
     PIIdeaViewObject *idea = [PIIdeaViewObject ideaWithTitle:name];
 
-    STAssertTrue([idea.title isEqualToString:name], [NSString stringWithFormat:@"Name should be: %@",name]);
+    XCTAssertTrue([idea.title isEqualToString:name], @"Name should be: %@",name);
 }
 
 @end
