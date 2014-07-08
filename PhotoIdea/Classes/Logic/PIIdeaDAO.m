@@ -56,42 +56,9 @@ NSString *const kDocumentNameURL = @"MyIdeas.pi";
         
         _document.persistentStoreOptions = @{NSMigratePersistentStoresAutomaticallyOption: @YES,
                                                    NSInferMappingModelAutomaticallyOption: @YES};
-        
-        [self registerForObjectContextNotification];
     }
     
     return self;
-}
-
-
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self.contextObservers];
-}
-
-- (void)registerForObjectContextNotification
-{
-    NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
-    
-    self.contextObservers = @[
-    [[NSNotificationCenter defaultCenter]addObserverForName:NSManagedObjectContextObjectsDidChangeNotification
-                                                     object:self.document.managedObjectContext
-                                                      queue:mainQueue
-                                                 usingBlock:^(NSNotification *note) {
-#ifdef DEBUG
-                                                     NSLog(@"NSManagedObjects did change.");
-#endif
-                                                 }],
-    [[NSNotificationCenter defaultCenter] addObserverForName:NSManagedObjectContextDidSaveNotification
-                                                      object:self.document.managedObjectContext
-                                                       queue:mainQueue
-                                                  usingBlock:^(NSNotification *note) {
-#ifdef DEBUG
-                                                      NSLog(@"NSManagedContext did save.");
-#endif
-                                                  }]
-    ];
-    
 }
 
 #pragma mark - Document
@@ -104,18 +71,13 @@ NSString *const kDocumentNameURL = @"MyIdeas.pi";
         }
     };
     
-    if (![self.document existsOnDisk])
-    {
+    if (![self.document existsOnDisk]) {
         [self.document saveToURL:self.document.fileURL
                 forSaveOperation:UIDocumentSaveForCreating
                completionHandler:onDocumentDidLoad];
-    }
-    else if ([self.document isClosed])
-    {
+    } else if ([self.document isClosed]) {
         [self.document openWithCompletionHandler:onDocumentDidLoad];
-    }
-    else if ([self.document isNormal])
-    {
+    } else if ([self.document isNormal]) {
         onDocumentDidLoad(YES);
     }
 }
