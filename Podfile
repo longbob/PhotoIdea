@@ -1,6 +1,4 @@
-platform :ios, '7.1'
-
-pod 'ReactiveCocoa'
+pod 'ReactiveCocoa', '~> 2.3'
 target 'PhotoIdeaTests', :exclusive => true do
-pod 'OCMock' 
+pod 'OCMock', '~> 3.0'
 end
