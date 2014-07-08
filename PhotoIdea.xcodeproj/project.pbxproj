@@ -25,7 +25,6 @@
 		B1CA2B4F173179560010236C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1CA2B4E173179560010236C /* main.m */; };
 		B1CA2B5C173179560010236C /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1CA2B5A173179560010236C /* MainStoryboard_iPhone.storyboard */; };
 		B1CA2B5F173179560010236C /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1CA2B5D173179560010236C /* MainStoryboard_iPad.storyboard */; };
-		B1CA2B6A173179570010236C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1CA2B69173179570010236C /* SenTestingKit.framework */; };
 		B1CA2B74173179570010236C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1CA2B72173179570010236C /* InfoPlist.strings */; };
 		B1CA2B88173185FA0010236C /* PIIdeaFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B1CA2B87173185FA0010236C /* PIIdeaFactoryTests.m */; };
 		B1CA2B9217318D570010236C /* PIIdeaDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = B1CA2B9117318D570010236C /* PIIdeaDAO.m */; };
@@ -74,8 +73,7 @@
 		B1CA2B50173179560010236C /* PhotoIdea-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhotoIdea-Prefix.pch"; sourceTree = "<group>"; };
 		B1CA2B5B173179560010236C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		B1CA2B5E173179560010236C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		B1CA2B68173179570010236C /* PhotoIdeaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoIdeaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1CA2B69173179570010236C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		B1CA2B68173179570010236C /* PhotoIdeaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoIdeaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1CA2B71173179570010236C /* PhotoIdeaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhotoIdeaTests-Info.plist"; sourceTree = "<group>"; };
 		B1CA2B73173179570010236C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B1CA2B87173185FA0010236C /* PIIdeaFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIIdeaFactoryTests.m; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1CA2B6A173179570010236C /* SenTestingKit.framework in Frameworks */,
 				88D9FC90970E43A18E4FA14B /* libPods-PhotoIdeaTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				B1CA2B3F173179560010236C /* PhotoIdea.app */,
-				B1CA2B68173179570010236C /* PhotoIdeaTests.octest */,
+				B1CA2B68173179570010236C /* PhotoIdeaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,7 +157,6 @@
 		B1CA2B41173179560010236C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B1CA2B69173179570010236C /* SenTestingKit.framework */,
 				1BF3718A5ED74E29B3B91955 /* libPods.a */,
 				94713BD7D3454A3F8D449103 /* libPods-PhotoIdeaTests.a */,
 			);
@@ -294,8 +290,8 @@
 			);
 			name = PhotoIdeaTests;
 			productName = PhotoIdeaTests;
-			productReference = B1CA2B68173179570010236C /* PhotoIdeaTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = B1CA2B68173179570010236C /* PhotoIdeaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -304,7 +300,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = PI;
-				LastTestingUpgradeCheck = 0510;
+				LastTestingUpgradeCheck = 0600;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Longbob;
 			};
@@ -600,6 +596,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhotoIdea/PhotoIdea-Prefix.pch";
@@ -610,7 +607,6 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -623,6 +619,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhotoIdea/PhotoIdea-Prefix.pch";
@@ -633,7 +630,6 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
